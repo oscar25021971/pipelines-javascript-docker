@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: oscarpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oscarpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: oscarpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: oscarpipelinesjavascriptdocker 
+          image: deployaksdevopsregistrycp.azurecr.io/oscarpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
